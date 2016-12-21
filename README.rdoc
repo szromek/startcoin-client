@@ -1,7 +1,7 @@
-= bitcoin-client {<img src="https://travis-ci.org/sinisterchipmunk/bitcoin-client.png?branch=master" alt="Build Status" />}[https://travis-ci.org/sinisterchipmunk/bitcoin-client] {<img src="https://codeclimate.com/github/sinisterchipmunk/bitcoin-client.png" />}[https://codeclimate.com/github/sinisterchipmunk/bitcoin-client] {<img src="https://coveralls.io/repos/sinisterchipmunk/bitcoin-client/badge.png" alt="Coverage Status" />}[https://coveralls.io/r/sinisterchipmunk/bitcoin-client]
+= bitcoin-client {<img src="https://travis-ci.org/szromek/startcoin-client.png?branch=master" alt="Build Status" />}[https://travis-ci.org/szromek/startcoin-client] {<img src="https://codeclimate.com/github/szromek/startcoin-client.png" />}[https://codeclimate.com/github/szromek/startcoin-client] {<img src="https://coveralls.io/repos/szromek/startcoin-client/badge.png" alt="Coverage Status" />}[https://coveralls.io/r/szromek/startcoin-client]
 
 Provides a Ruby library to the complete Startcoin JSON-RPC API. Implements all methods listed
-at {https://en.bitcoin.it/wiki/Original_Startcoin_client/API_Calls_list}[https://en.bitcoin.it/wiki/Original_Startcoin_client/API_Calls_list].
+at {https://en.bitcoin.it/wiki/Original_Bitcoin_client/API_Calls_list}[https://en.bitcoin.it/wiki/Original_Startcoin_client/API_Calls_list].
 Also supports customizing the host and port number to connect to.
 
 == Installation
@@ -75,14 +75,4 @@ Here are several examples of how you can change the host information:
 You should see the StartcoinClient::Client class documentation if you'd like to see the other options and methods
 that are made available.
 
-
-== Donations
-
-If you found this library useful and feel inclined to compensate me for my trouble, I'm certainly not going to turn you down!
-
-Startcoin donations can be sent to:
-
-  1HawYer58J9Vy3iju1w7jsRVci5tzaxkwn
-
-Thanks!
 
