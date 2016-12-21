@@ -53,7 +53,7 @@ that are made available.
 
 It's highly recommended to not connect StartcoinClient to live network, but instead use local testnet. One possibility is to use docker image called **bitcoin-testnet-box** (https://github.com/freewil/bitcoin-testnet-box). For installation process please follow instructions on its wiki page.
 
-After successful instalation you can connect to first wallet with following
+After successful instalation you can connect to wallets with following commands
 
   StartcoinClient('admin1', '123', :host => '127.0.0.1', :port => 19001)
   StartcoinClient('admin2', '123', :host => '127.0.0.1', :port => 19011)
