@@ -6,19 +6,17 @@ Also supports customizing the host and port number to connect to.
 
 == Installation
 
-On Ruby 1.9, you can just install the gem and start using it. On 1.8, the 'json' gem is also required, so you'll need to install that first:
+To install gem just add this entry to your Gemfile
 
-  gem install json
+  gem 'startcoin-client'
+  gem 'json', '~> 1.5.3' # For Ruby < 1.9
 
-Or, if you're using Bundler (and you should be), just add it to the Gemfile:
-
-  gem 'json', '~> 1.5.3'
 
 == Usage
 
 As with most Ruby gems, you first need to require the library into your project:
 
-  require 'bitcon_client'
+  require 'startcoin_client'
 
 After doing this, the simplest possible usage looks like this:
 
@@ -32,24 +30,9 @@ same task:
   client.balance
   # => 0.001
 
-The third and final way to use the library is by taking advantage of a simple DSL:
-
-  include StartcoinClient
-
-  # set up credentials
-  username 'username'
-  password 'password'
-
-  balance
-  # => 0.001
-
-  accounts
-  # => {"account" => 0.001}
-
 The RPC method names available to you are exactly the same as those listed on the Startcoin wiki
 (again, that's {https://en.bitcoin.it/wiki/Original_Startcoin_client/API_Calls_list}[https://en.bitcoin.it/wiki/Original_Startcoin_client/API_Calls_list]). Some aliases
 have been added to make them more "ruby-ish," but none of the original names have been changed.
-
 
 == Host, Port and SSL
 
@@ -63,16 +46,17 @@ Here are several examples of how you can change the host information:
   client.ssl?
   # => true
 
-  include StartcoinClient
-  host 'example.com'
-  port 38332
-  ssl?
-  # => false
-  ssl true
-  ssl?
-  # => true
-
 You should see the StartcoinClient::Client class documentation if you'd like to see the other options and methods
 that are made available.
 
+== Test environment
+
+It's highly recommended to not connect StartcoinClient to live network, but instead use local testnet. One possibility is to use docker image called **bitcoin-testnet-box** (https://github.com/freewil/bitcoin-testnet-box). For installation process please follow instructions on its wiki page.
+
+After successful instalation you can connect to first wallet with following
+
+  StartcoinClient('admin1', '123', :host => '127.0.0.1', :port => 19001)
+  StartcoinClient('admin2', '123', :host => '127.0.0.1', :port => 19011)
+
+At this point you can use regular RPC methods provided in API
 
