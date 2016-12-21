@@ -1,12 +1,12 @@
 require 'json'
 
-class BitcoinClient::Request
+class StartcoinClient::Request
   attr_reader :service_name, :params
-  
+
   def initialize(service_name, params = [])
     @service_name = service_name
     @params = params.dup
-    
+
     # bitcoin rejects null values even for optional params. Since
     # even params following those may have default non-nil values,
     # we'll assume the first non-nil value marks a set of optional
@@ -20,7 +20,7 @@ class BitcoinClient::Request
       @params = @params[0...index]
     end
   end
-  
+
   def to_hash
     {
       :method => service_name,
@@ -28,7 +28,7 @@ class BitcoinClient::Request
       :id => "jsonrpc"
     }
   end
-  
+
   def to_post_data
     to_hash.to_json
   end

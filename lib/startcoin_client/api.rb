@@ -1,7 +1,7 @@
-class BitcoinClient::API
+class StartcoinClient::API
   attr_reader :options
   attr_reader :params
-  
+
   def user; options[:user]; end
   def pass; options[:pass]; end
   def host; options[:host]; end
@@ -21,13 +21,13 @@ class BitcoinClient::API
       :ssl  => false
     }.merge(options)
   end
-  
+
   def to_hash
     @options.dup
   end
-  
+
   def request(service_name, *params)
-    req = BitcoinClient::Request.new(service_name, params)
-    BitcoinClient::RPC.new(to_hash).dispatch(req)
+    req = StartcoinClient::Request.new(service_name, params)
+    StartcoinClient::RPC.new(to_hash).dispatch(req)
   end
 end

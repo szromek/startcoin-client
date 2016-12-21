@@ -1,4 +1,4 @@
-module BitcoinClient::Errors
+module StartcoinClient::Errors
   class RPCError < StandardError
   end
 end
