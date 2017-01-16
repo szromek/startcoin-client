@@ -27,6 +27,10 @@ module StartcoinClient::DSL
     bitcoin.ssl = value
   end
 
+  def proxy=(value)
+    bitcoin.proxy = value
+  end
+
   def username(value = nil)
     value ? bitcoin.user = value : bitcoin.user
   end
@@ -45,6 +49,10 @@ module StartcoinClient::DSL
 
   def ssl(value = nil)
     value.nil? ? bitcoin.ssl : bitcoin.ssl = value
+  end
+
+  def proxy(value = nil)
+    value.nil? ? bitcoin.proxy : bitcoin.proxy = value
   end
 
   def ssl?

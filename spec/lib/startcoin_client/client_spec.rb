@@ -8,6 +8,7 @@ describe StartcoinClient::Client do
     subject.pass.should == $pass
     subject.host.should == 'localhost'
     subject.port.should == 8332
+    subject.proxy.should be_nil
     subject.should_not be_ssl
   end
 
