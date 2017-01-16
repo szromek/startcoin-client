@@ -4,7 +4,7 @@ class StartcoinClient::RPC
   def initialize(options)
     @user, @pass = options[:user], options[:pass]
     @host, @port = options[:host], options[:port]
-    @ssl = options[:ssl]
+    @ssl, @proxy = options[:ssl], options[:proxy]
   end
 
   def credentials
@@ -23,10 +23,18 @@ class StartcoinClient::RPC
   end
 
   def dispatch(request)
-    RestClient.post(service_url, request.to_post_data, content_type: :json) do |respdata, request, result|
+    process_response = lambda do |respdata, _request, _result|
       response = JSON.parse(respdata)
       raise StartcoinClient::Errors::RPCError, response['error'] if response['error']
       response['result']
+    end
+    RestClient::Request.execute(method: :post,
+                                url: service_url,
+                                payload: request.to_post_data,
+                                proxy: @proxy,
+                                headers: { content_type: :json },
+                                &process_response)
+
     end
   end
 

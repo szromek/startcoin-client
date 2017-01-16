@@ -8,17 +8,20 @@ class StartcoinClient::API
   def port; options[:port]; end
   def ssl;  options[:ssl];  end
   def ssl?; options[:ssl];  end
+  def proxy; options[:proxy]; end
   def user=(a); options[:user] = a; end
   def pass=(a); options[:pass] = a; end
   def host=(a); options[:host] = a; end
   def port=(a); options[:port] = a; end
   def ssl=(a);  options[:ssl]  = a; end
+  def proxy=(a); options[:proxy] = a; end
 
   def initialize(options = {})
     @options = {
       :host => 'localhost',
       :port => 8332,
-      :ssl  => false
+      :ssl  => false,
+      :proxy => nil
     }.merge(options)
   end
 
