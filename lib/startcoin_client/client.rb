@@ -5,12 +5,14 @@ class StartcoinClient::Client
   def host; api.host; end
   def port; api.port; end
   def ssl;  api.ssl;  end
+  def proxy; api.proxy; end
   def ssl?; api.ssl?; end
   def user=(a); api.user = a; end
   def pass=(a); api.pass = a; end
   def host=(a); api.host = a; end
   def port=(a); api.port = a; end
   def ssl=(a);  api.ssl  = a; end
+  def proxy=(a); api.proxy = a; end
 
   def options
     api.options
