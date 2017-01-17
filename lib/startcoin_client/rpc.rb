@@ -5,6 +5,7 @@ class StartcoinClient::RPC
     @user, @pass = options[:user], options[:pass]
     @host, @port = options[:host], options[:port]
     @ssl, @proxy = options[:ssl], options[:proxy]
+    @verify_ssl  = options[:verify_ssl]
   end
 
   def credentials
@@ -32,11 +33,13 @@ class StartcoinClient::RPC
                                 url: service_url,
                                 payload: request.to_post_data,
                                 proxy: @proxy,
+                                verify_ssl: false,
                                 headers: { content_type: :json },
                                 &process_response)
   end
 
   private
+
   def symbolize_keys(hash)
     case hash
     when Hash
