@@ -34,8 +34,6 @@ class StartcoinClient::RPC
                                 proxy: @proxy,
                                 headers: { content_type: :json },
                                 &process_response)
-
-    end
   end
 
   private
