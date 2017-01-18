@@ -30,7 +30,8 @@ describe StartcoinClient::API do
       :host => 'localhost',
       :port => 8332,
       :ssl => false,
-      :proxy => nil
+      :proxy => nil,
+      :verify_ssl => true
     }
   end
 end

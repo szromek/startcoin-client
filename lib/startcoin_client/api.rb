@@ -21,7 +21,8 @@ class StartcoinClient::API
       :host => 'localhost',
       :port => 8332,
       :ssl  => false,
-      :proxy => nil
+      :proxy => nil,
+      :verify_ssl => true
     }.merge(options)
   end
 
